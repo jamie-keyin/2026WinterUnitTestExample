@@ -6,7 +6,11 @@ public class Flight {
     private String origin;
 
     public boolean isComplete() {
-        return aircraft.getStatus().equals("landed-at-gate");
+        if (aircraft.getStatus() != null) {
+            return aircraft.getStatus().equals(Status.LANDED_AT_GATE);
+        }
+
+        return false;
     }
 
     public Aircraft getAircraft() {

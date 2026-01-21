@@ -15,5 +15,13 @@ public class FlightTest {
 
         Assertions.assertFalse(flightUnderTest.isComplete());
 
+        aircraftUnderTest.setStatus(Status.LANDED_AT_GATE);
+
+        Assertions.assertTrue(flightUnderTest.isComplete());
+
+        aircraftUnderTest.setStatus(Status.IN_FLIGHT);
+
+        Assertions.assertFalse(flightUnderTest.isComplete());
+
     }
 }

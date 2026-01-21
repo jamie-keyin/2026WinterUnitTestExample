@@ -2,7 +2,7 @@ package com.keyin;
 
 public class Aircraft {
     private String tailNumber;
-    private String status;
+    private Status status;
 
     public String getTailNumber() {
         return tailNumber;
@@ -12,11 +12,11 @@ public class Aircraft {
         this.tailNumber = tailNumber;
     }
 
-    public String getStatus() {
+    public Status getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Status status) {
         this.status = status;
     }
 }
