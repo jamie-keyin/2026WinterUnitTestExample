@@ -17,7 +17,7 @@ public class FlightOpsClient {
                     "http://localhost:8080/flight_ops/status?tail_number=" + aircraft.getTailNumber());
 
             ObjectMapper mapper = new ObjectMapper();
-            Status status = mapper.readValue(response, Status.class);
+            return mapper.readValue(response, Status.class);
         }
 
         return Status.DEFAULT;
