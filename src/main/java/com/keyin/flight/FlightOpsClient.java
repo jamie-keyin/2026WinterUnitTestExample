@@ -13,8 +13,9 @@ public class FlightOpsClient {
 
     public Status getAircraftStatus(Aircraft aircraft) {
         if (restClient != null) {
-            String response = restClient.sendGetRequest(
-                    "http://localhost:8080/flight_ops/status?tail_number=" + aircraft.getTailNumber());
+            restClient.setURLRoot("http://localhost:8080/flight_ops/status");
+
+            String response = restClient.sendGetRequest(aircraft);
 
             ObjectMapper mapper = new ObjectMapper();
             return mapper.readValue(response, Status.class);
