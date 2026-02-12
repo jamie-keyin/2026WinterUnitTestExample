@@ -20,14 +20,16 @@ public class FlightOpsClientTest {
     @Test
     public void testGetAircraftStatus() {
         FlightOpsClient flightOpsClientUnderTest = new FlightOpsClient();
-        flightOpsClientUnderTest.setRestClient(restClient);
+        flightOpsClientUnderTest.setRestClient(mockRestClient);
 
         Aircraft aircraftUnderTest = new Aircraft();
         aircraftUnderTest.setTailNumber("1234T");
 
+        Mockito.when(mockRestClient.sendGetRequest(aircraftUnderTest)).thenReturn("{ \"status\": \"no-status\" }");
+
         Status status = flightOpsClientUnderTest.getAircraftStatus(aircraftUnderTest);
 
-        System.out.println("Status was: " + status);
+        System.out.println("Status was: " + status + "... for: " + aircraftUnderTest.getTailNumber());
 
         Assertions.assertEquals(Status.DEFAULT, status);
 

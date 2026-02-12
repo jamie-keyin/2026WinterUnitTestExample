@@ -12,7 +12,7 @@ public class FlightOpsClient {
     private RestClient restClient;
 
     public Status getAircraftStatus(Aircraft aircraft) {
-        if (restClient != null) {
+        if (getRestClient() != null) {
             restClient.setURLRoot("http://localhost:8080/flight_ops/status");
 
             String response = restClient.sendGetRequest(aircraft);
