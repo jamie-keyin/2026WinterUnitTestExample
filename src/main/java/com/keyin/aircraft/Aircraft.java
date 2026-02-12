@@ -1,4 +1,4 @@
-package com.keyin;
+package com.keyin.aircraft;
 
 public class Aircraft {
     private String tailNumber;

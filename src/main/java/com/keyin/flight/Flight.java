@@ -1,4 +1,7 @@
-package com.keyin;
+package com.keyin.flight;
+
+import com.keyin.aircraft.Status;
+import com.keyin.aircraft.Aircraft;
 
 public class Flight {
     private Aircraft aircraft;

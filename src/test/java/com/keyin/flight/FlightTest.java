@@ -1,5 +1,7 @@
-package com.keyin;
+package com.keyin.flight;
 
+import com.keyin.aircraft.Aircraft;
+import com.keyin.aircraft.Status;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
